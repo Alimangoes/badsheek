@@ -236,6 +236,7 @@ header.sticky .logo{
     border-radius: 50%;
     transition: .3s linear;
     color: #000;
+    margin-top: 20px;
   }
   .card1:hover .card-icon{
     background: none;
@@ -245,13 +246,16 @@ header.sticky .logo{
   .card1 p {
     margin-left: 20px;
     letter-spacing: 2px;
-    max-height: 0;
     opacity: 0;
-    transition: .3s linear;
+    transition: .1s linear;
+    height: 100;
+    align-items: center;
+    display: flex;
+
   }
   .card1:hover p{
-    max-height: 40px;
     opacity: 1;
+    height: 60px;
   }
   @media (max-width: 500px) {
     #home {
@@ -276,17 +280,41 @@ header.sticky .logo{
       left: -10%;
     }
     .images .ali {
-      width: 100;
-      height: 300;
+      width: 0;
+      height: 0;
     }
     .images .pader{
-      width: 200;
-      height: 300;
-    }
-    .images {
+      width: 0;
+      height:0;
+    }header .links {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 25em;
+  }
+  header .links a {
+      color: #000;
       position: absolute;
-      bottom: 30%;
-      left: 60%;
+      text-decoration: none;
+      margin: 0 20px;
+      letter-spacing: 5px;
+      font-weight: 1000px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      pointer-events: none;
+      top: -2222rem;
+  }
+  header .logo{
+      font-family: 'black ops one', monospace;
+      position: relative;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      font-size: 4em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.4s;
     }
   }
   @media (max-width: 1000px) {
