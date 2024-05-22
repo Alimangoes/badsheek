@@ -327,7 +327,7 @@ header.sticky .logo{
        flex-direction: column;
        height: auto;
        width: 100%;
-       padding-top: 15%;
+       padding-top: 50%;
      }
      .card {
      width: 300px;
