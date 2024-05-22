@@ -37,39 +37,35 @@ header .links {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 25em;
+    padding-right: 15em;
 }
 header .links a {
+    font-family: 'black ops one', monospace;
     color: #fff;
     position: relative;
     text-decoration: none;
     margin: 0 20px;
     letter-spacing: 5px;
     font-weight: 1000px;
-    transition: 0.4s;
     border: 1px solid transparent;
     border-radius: 5px;
 }
 header .links a:hover {
-    color: red;
+  color: rgb(207, 60, 60);
+}
+header.sticky .links a:hover {
+  color: rgb(207, 60, 60);
 }
 header .links a.active {
-    border: 1px solid #eee;
     border-radius: 5px;
-    color: black;
-    background-color: white;
+    color: rgb(207, 60, 60);
 }
 header.sticky .links a{
     color: #000;
 }
-header.sticky .links a:hover {
-    color: red;
-}
 header.sticky .links a.active {
-    border: 1px solid #000;
     border-radius: 5px;
-    color: #fff;
-    background-color: #000;
+    color: rgb(207, 60, 60);
 }
 header.sticky .logo{
     color: #000;
