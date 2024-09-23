@@ -351,7 +351,7 @@ header.sticky .bar{
     .links {
       position: fixed;
       flex-direction: column;
-      gap: 5px;
+      gap: 60px;
       background-color: transparent;
       top: 0%;
       right: -100%;
@@ -363,6 +363,7 @@ header.sticky .bar{
       background-color: #262626;
       z-index: 999;
       width: 25%;
+      justify-content: center;
     }
     .links.active{
       right: 0;
