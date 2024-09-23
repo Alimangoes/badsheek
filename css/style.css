@@ -271,7 +271,7 @@ header.sticky .bar{
   }
   .card1:hover p{
     opacity: 1;
-    height: 40;
+    height: 50;
   }
   .agent-section{
     align-items: center;
