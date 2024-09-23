@@ -1,54 +1,67 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html,body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'courier', monospace;
     background: #000;
 }
 header{
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     transition: 0.4s;
-    padding: 20px 100px;
+    padding: 0 50;
     z-index: 1000;
+    height: 100;
 }
 header.sticky {
-    padding: 5px 100px;
+    padding: 0 50;
+    height: 70;
     background-color: #fff;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
-header .logo{
+.logo{
     font-family: 'black ops one', monospace;
-    position: relative;
     color: #fff;
     text-decoration: none;
     font-size: 4em;
-    text-transform: uppercase;
     letter-spacing: 4px;
     transition: 0.4s;
 }
-header .links {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 15em;
+.logo:hover{
+  transform: scale(1.1);
 }
-header .links a {
+.links {
+  display:flex;
+  gap: 60px;
+}
+.links a {
+    display: flex;
     font-family: 'black ops one', monospace;
     color: #fff;
-    position: relative;
     text-decoration: none;
-    margin: 0 20px;
     letter-spacing: 5px;
     font-weight: 1000px;
-    border: 1px solid transparent;
-    border-radius: 5px;
+    transition: 0.3 ease;
+    padding-left: 3px;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3 ease-in-out;
+  background-color: white;
 }
 header .links a:hover {
   color: rgb(207, 60, 60);
@@ -57,18 +70,20 @@ header.sticky .links a:hover {
   color: rgb(207, 60, 60);
 }
 header .links a.active {
-    border-radius: 5px;
     color: rgb(207, 60, 60);
+    border-bottom: 3px solid;
 }
 header.sticky .links a{
     color: #000;
 }
 header.sticky .links a.active {
-    border-radius: 5px;
     color: rgb(207, 60, 60);
 }
 header.sticky .logo{
     color: #000;
+}
+header.sticky .bar{
+  background-color: #000;
 }
 .content {
     width: 100%;
@@ -82,27 +97,29 @@ header.sticky .logo{
     align-items: center;
     justify-content: center;
     background-color: whitesmoke;
+    overflow: hidden;
   }
-  section h1 {
+  .content section:nth-child(odd) {
+    background-color: #000;
+    color: #fff;
+  }
+  .content section h1 {
     font-family: 'black ops one', monospace;
     position: absolute;
     justify-content: center;
-    top: 95px;
+    top: 120px;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3em;
+    font-size: 4em;
     cursor: default;
-  }
-  .content section:nth-child(odd) {
-    background-color: transparent;
-    color: #fff;
+    font-weight: 500;
   }
   .images .ali {
     position: absolute;
     left: 50%;
     width: 300px;
     height: 600px;
-    bottom: 20%;
+    bottom: 10%;
     transform: translateX(-50%);
     transition: left 1s;
     z-index: 1;
@@ -112,13 +129,13 @@ header.sticky .logo{
     left: 50%;
     width: 700;
     height: 600;
-    bottom: 20%;
+    bottom: 10%;
     transform: translateX(-50%);
     transition: bottom 1s;
     z-index: 1;
   }
   .images:hover .pader {
-    bottom: 25%;
+    bottom: 15%;
   }
   .images:hover .ali {
     left: 48%;
@@ -167,7 +184,7 @@ header.sticky .logo{
     transition: max-width .6s, max-height .6s;
   }
   .card-body {
-    height: 70px;
+    height: 80px;
     width: fit-content;
     padding: 6px;
     position: absolute;
@@ -199,7 +216,7 @@ header.sticky .logo{
     cursor: pointer;
   }
   .card:hover .card-body {
-    height: 98%;
+    height: 100%;
   }
   .contact-info {
     display: flex;
@@ -213,15 +230,15 @@ header.sticky .logo{
     z-index: 5;
   }
   .card1 {
-    margin-bottom: 40;
-    margin-left: 40;
+    margin: 30 30;
     padding: 5;
-    height: 60;
+    height: 60px;
     width: 20%;
     display: flex;
     color: #fff;
     cursor: pointer;
     text-align: center;
+    border-radius: 50%;
   }
   .card-icon {
     font-size: 28px;
@@ -234,7 +251,7 @@ header.sticky .logo{
     color: #000;
     z-index: 6;
     text-align: center;
-    align-content: center;
+    justify-content: center;
   }
   .card1:hover .card-icon{
     background: none;
@@ -246,17 +263,66 @@ header.sticky .logo{
     letter-spacing: 2px;
     opacity: 0;
     transition: .1s linear;
-    height: 40;
     align-items: center;
     display: flex;
     pointer-events: none;
+    height: 100;
 
   }
   .card1:hover p{
     opacity: 1;
-    height: 20px;
+    height: 40;
   }
-  @media (max-width: 1000px) {
+  .agent-section{
+    align-items: center;
+    justify-content: center;
+  }
+  .agent-image img{
+    position: absolute;
+    height: 80%;
+    margin-top: 4%;
+    margin-left: 12%;
+  }
+  .agent-back img{
+    margin-top: 5%;
+    height: 70%;
+    width: 100%;
+  }
+  .agent-skills {
+    display: flex;
+    width: 17%;
+    padding: 0 20px;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+  .skills {
+    margin-bottom: 40;
+    margin-left: 40;
+    padding: 5;
+    height: 70;
+    width: 20%;
+    display: flex;
+    cursor: pointer;
+    text-align: center;
+    flex-direction: column;
+  }
+  .skills img {
+    font-size: 28px;
+    width: 70px;
+    height: 70px;
+    line-height: 50px;
+    transition: transform 0.1s ease-in-out;;
+    z-index: 6;
+    text-align: center;
+    align-content: center;
+  }
+  .skills:hover img{
+    transform: translateY(-5px);
+  }
+  @media (max-width: 768px) {
     #home {
       height: 100%;
       width: 100%;
@@ -265,81 +331,86 @@ header.sticky .logo{
         padding: 15px 30px;
         z-index: 1000;
     }
-    header .logo {
-      left: 46%;
-      transform: translateX(-50%);
-    }
     header.sticky {
         padding: 2px 30px;
     }
-    header .links {
-        padding-right: 5em;
+    .hamburger{
+      display: block;
+      z-index: 1001;
+      transition: 0.3s;
     }
-    header .links a {
-        margin: 0 4px; 
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .links {
+      position: fixed;
+      flex-direction: column;
+      gap: 5px;
+      background-color: transparent;
+      top: 0%;
+      right: -100%;
+      align-items: center;
+      padding: 5 20;
+      transition: 0.4s;
+      height: 100%;
+      padding: 14% 5;
+      background-color: #262626;
+      z-index: 999;
+      width: 25%;
+    }
+    .links.active{
+      right: 0;
+    }
+    header.sticky .links {
+      transition: 0.4s;
+      top: 0%;
+      padding: 10% 5;
+    }
+    header .links a:hover {
+      color: #fff;
+    }
+    header.sticky .links a:hover {
+      color: #fff;
+    }
+    header .links a.active {
+        color: #fff;
+    }
+    header.sticky .links a{
+      color: #fff;
+    }
+    header.sticky .links a.active {
+        color: #fff;
+    }
+    .contact-info {
+      display: none;
     }
     .contact-info {
       top: 55%;
     }
-    .images .ali {
-      width: 0;
-      height: 0;
-    }
-    .images .pader{
-      width: 0;
-      height:0;
-    }header .links {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-right: 25em;
-  }
-  header .links a {
-      color: #000;
-      position: absolute;
-      text-decoration: none;
-      margin: 0 20px;
-      letter-spacing: 5px;
-      font-weight: 1000px;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      pointer-events: none;
-      top: -2222rem;
-  }
-  header .logo{
-      font-family: 'black ops one', monospace;
-      position: relative;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-      font-size: 4em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: 0.4s;
-    }
-    .contact-info {
-      top: 60%;
+    .images {
+      display: none;
     }
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     #agents {
        flex-direction: column;
        height: auto;
        width: 100%;
-       padding-top: 50%;
+       padding-top: 160px;
      }
      .card {
      width: 300px;
      }
+      .agent-skills {
+         flex-direction: column;
+         height: auto;
+         width: 100%;
+         padding-top: 20%;
+      }
     }
-  /*footer {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #eee;
-    text-align: center;
-    position: absolute;
-    right: 0;
-    left: 0;
-}*/
