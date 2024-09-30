@@ -388,29 +388,6 @@ header.sticky .bar{
       background-repeat: no-repeat;
       border-radius: 16px;
     }
-    #contact {
-      display: block;
-      justify-content: center;
-      align-items: center;
-    }
-    .links .nav-link:nth-child(3){
-      display: block;
-    }
-    .contact-info1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin: 290 0;
-    }
-    .card1 {
-      justify-content: center;
-    }
-    .card1:hover .card-icon{
-      background: #fff;
-      color: #000;
-      transform: none;
-    }
     @keyframes animate {
       0%{
           transform: rotate(0deg);
